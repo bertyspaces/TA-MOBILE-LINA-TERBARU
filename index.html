@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/onsen-css-theme/onsen-css-components.css">
+	<link rel="icon" type="image/png" href="logo/milea.png">
+	<title>Milea Catering</title>
+  <script src="js/onsenui.min.js"></script>	
+	<script>
+		ons.platform.select('ios');
+	</script>
+</head>
+<body >
+	<ons-navigator id="myNavigator" page="login" animation="fade" ></ons-navigator>
+	
+	<!-- Halaman Login -->
+	<template id="login">
+		<ons-page  >		
+			
+			<div style="text-align: left; " >
+
+				<ons-card >
+					<center>
+					<ons-list-item style="margin-top: 10%;">
+						<center><img src="logo/milea.png" width="100%" ></center>
+						<ons-row style="margin-top: 10%;">
+							<ons-col width="10%">
+								<ons-icon icon="fa-user"  size="20px"></ons-icon>
+							  </ons-col>
+							<ons-col>
+								<ons-input id="username" placeholder="Masukkan Username"></ons-input>
+							</ons-col>
+						</ons-row>
+					</ons-list-item>
+				
+					<ons-list-item>
+						<ons-row></ons-row>
+							  <ons-col width="10%">
+								<ons-icon icon="fa-key" size="20px"></ons-icon>
+							  </ons-col>
+							<ons-col >
+								<ons-input type="password" id="password" placeholder="Masukkan Password "></ons-input>
+							</ons-col>
+						</ons-row>
+					</ons-list-item>												
+				</center>
+				<center><ons-button onclick="login()" style="margin-top: 10%; margin-bottom: 50%;" width="30%">Login</ons-button></center>
+				</ons-card>		
+										  
+			</div>
+	  </ons-page>
+	</template>
+
+	<!-- Splitter -->
+	<template id="homepage">
+		<ons-page>
+			<ons-splitter>
+				<ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+				  <ons-page>
+					<ons-list>
+					  <ons-list-item onclick="fn.load('home.html')" tappable>
+						Home
+					  </ons-list-item>
+					  <ons-list-item onclick="fn.load('menu.html')" tappable>
+						Menu Catering
+					  </ons-list-item>
+					  <ons-list-item onclick="fn.load('daftar_pesanan.html')" tappable>
+						Daftar Pesanan
+					  </ons-list-item>
+					</ons-list>
+				  </ons-page>
+				</ons-splitter-side>
+				<ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+			  </ons-splitter>
+			  
+			  <!-- Halaman Menu -->
+			  <template id="home.html">
+				<ons-page>
+					<ons-toolbar>
+					  <div class="left">
+						<ons-toolbar-button onclick="fn.open()">
+						  <ons-icon icon="md-menu"></ons-icon>
+						</ons-toolbar-button>
+					  </div>
+					  <div class="center">
+						Milea Catering
+					  </div>
+					</ons-toolbar>
+					  
+					  <ons-card>
+						<div class="content">          
+							<center><img src="logo/milea.png" alt="Onsen UI" style="width: 100%"></center>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Alamat</label>
+								</ons-col>
+								<ons-col>
+									<ons-input  style="color: black;" disabled >Jl.Laks Yosudarso, Gg.Mandiri, Rt 10 Rw O4, No.309, Kepatihan, Wiradesa, Kabupaten Pekalongan</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%" :>
+									<label>Owner</label>
+								</ons-col>
+								<ons-col>
+									<ons-input   style="color: black;" disabled >Ibu Lia</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>No. Telepon</label>
+								</ons-col>
+								<ons-col>
+									<ons-input   style="color: black;" disabled >085704145120</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Jam Buka</label>
+								</ons-col>
+								<ons-col>
+									<ons-input   style="color: black;" disabled >Senin-Sabtu = 08.00 - 20.00</ons-input>
+									<ons-input   style="color: black;" disabled >Hari Minggu dan Hari Besar TUTUP</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+				
+
+						</div>
+					  </ons-card>
+					</div>
+				  </ons-page>
+			  </template>
+
+			   <!-- Halaman Daftar Menu -->
+			   <template id="menu.html">
+				<ons-page>
+					<ons-toolbar>
+					  <div class="left">
+						<ons-toolbar-button onclick="fn.open()">
+						  <ons-icon icon="md-menu"></ons-icon>
+						</ons-toolbar-button>
+					  </div>
+					  <div class="center">
+					   Kategori Menu
+					  </div>
+					</ons-toolbar>
+					<ons-card>
+					  <img src="logo/aqiqah.jpeg" alt="Onsen UI" style="width: 100%">
+					  <div class="title">
+						AQIQOH
+					  </div>
+					  <div class="content">
+						<div>
+						  <ons-button  onclick="fn.aqiqoh('aqiqoh.html')">Pilih Paket</ons-button>
+						  
+						</div>
+					  </div>
+					</ons-card>
+  
+					<ons-card>
+					  <img src="logo/berkat.jpg" alt="Onsen UI" style="width: 100%">
+					  <div class="title">
+						NASI BERKAT
+					  </div>
+					  <div class="content">
+						<div>
+						  <ons-button onclick="fn.berkat('berkat.html')">Pilih Paket</ons-button>
+						  
+						</div>
+					  </div>
+					</ons-card>
+  
+					<ons-card>
+					  <img src="logo/jajan.jpg" alt="Onsen UI" style="width: 100%">
+					  <div class="title">
+						SNACK
+					  </div>
+					  <div class="content">
+						<div>
+						  <ons-button onclick="fn.snack('snack.html')">Pilih Paket</ons-button>
+						  
+						</div>
+					  </div>
+					</ons-card>
+				  </ons-page>
+			  </template>
+			  
+			  <!-- Halaman Daftar Pesanan -->
+			  <template id="daftar_pesanan.html">
+				<ons-page>
+				  <ons-toolbar>
+					<div class="left">
+					  <ons-toolbar-button onclick="fn.open()">
+						<ons-icon icon="md-menu"></ons-icon>
+					  </ons-toolbar-button>
+					</div>
+					<div class="center">
+					  Daftar Pesanan
+					</div>
+				  </ons-toolbar>
+					
+					<ons-card>
+					  <div class="content">     
+						     
+						<ons-list>
+						  <ons-list-item>
+							
+							<ons-col width="25%">
+							<div >
+							  <label>No. Pesanan</label>
+							</div>
+							</ons-col>
+							<ons-col width="25%">
+							<div >
+							  <label>Nama</label>
+							</div>
+						</ons-col>
+							<ons-col width="27%">
+							<div >
+							  <label>Tgl.Booking</label>
+							</div>
+						</ons-col>
+							  <ons-col width="23%">
+							<div >
+							  <label>Aksi</label>
+							</div>
+						</ons-col>
+						  </ons-list-item>
+						  <div id="list-data">
+						  </div>
+						</ons-list>
+					  </div>
+					</ons-card>
+				  </div>
+				</ons-page>
+			  </template>
+			  
+			 
+
+			 
+			  <!-- List Aqiqoh -->
+			  <template id="aqiqoh.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Aqiqoh
+						</div>
+					  </ons-toolbar>
+					<ons-list>
+    				<ons-list-item onclick="fn.aqiqoh1('aqiqoh1.html')" tappable>Paket Lontong</ons-list-item>
+					<ons-list-item onclick="fn.aqiqoh2('aqiqoh2.html')" tappable>Paket Nasi Kebuli Dus </ons-list-item>
+					<ons-list-item onclick="fn.aqiqoh3('aqiqoh3.html')" tappable>Paket Nasi Berkat Dus</ons-list-item>
+				</ons-list>
+				
+				</ons-page>
+			  </template>
+
+			  <!-- Input Aqiqoh -->
+			  <template id="aqiqoh1.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Lontong
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/gulai.JPG" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="aqiqoh-paket lontong" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Gulai, Lontong 3, Sambal Goreng Kentang, Mie Goreng, Kerupuk, Tas Jinjing</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 18.000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input  id="hargaAwal"  style="color: black;" value="18000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+
+							</ons-page>
+			  </template>
+
+			  <template id="aqiqoh2.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Nasi Kebuli Dus 18x18
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/kebuli.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="aqiqoh-paket nasi kebuli dus 18x18" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Nasi Kebuli, sambal Goreng Telor, Daging Semur, Sambal Goreng Kentang, Acar Nanas, Kerupuk Udang</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 30.000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="30000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+			  <template id="aqiqoh3.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Nasi Berkat Dus 
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/berkat2.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="aqiqoh-paket nasi berkat dus" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Nasi Putih, sambal Goreng Telor, Daging Semur, Sambal Goreng Kentang, Acar Nanas, Kerupuk Udang</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 27.000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="27000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+
+			  <!-- LIst Snack -->
+			   <template id="snack.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Snack
+						</div>
+					  </ons-toolbar>
+					<ons-list>
+    				<ons-list-item  onclick="fn.snack1('snack1.html')" tappable>Snack + Aqua</ons-list-item>
+					<ons-list-item onclick="fn.snack2('snack2.html')" tappable>Snack (Tanpa Aqua)</ons-list-item>
+					<ons-list-item  onclick="fn.snack3('snack3.html')" tappable>Snack Komplit</ons-list-item>
+				</ons-list>
+				
+				</ons-page>
+			  </template>
+
+			  <!-- Input Snack -->
+			  <template id="snack1.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Snack + Aqua 
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/snack1.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="snack-snack+aqua" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Aqua, Pie Buah, Agar-Agar, Risoles</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 6000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="6000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+			  <template id="snack2.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Snack Tanpa Aqua
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/snack2.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="snack-snack non aqua" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Bolu, Pie Buah, Agar-Agar, Risoles</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 5500</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="5500" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+			  
+			  <template id="snack3.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Snack Komplit  
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/snack3.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="snack-komplit" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Aqua,Bolu, Lemper, Agar-Agar, Risoles, Jeruk</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 7000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="7000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+			  
+			  
+
+			  <!-- List Berkat -->
+			  <template id="berkat.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Paket Nasi Berkat
+						</div>
+					  </ons-toolbar>
+					<ons-list>
+    				<ons-list-item  onclick="fn.berkat1('berkat1.html')" tappable>Nasi Berkat Ukuran Dus 20x20</ons-list-item>
+					<ons-list-item onclick="fn.berkat2('berkat2.html')" tappable>Nasi Berkat Ukuran Dus 18x18</ons-list-item>
+					<ons-list-item  onclick="fn.berkat3('berkat3.html')" tappable>Nasi Berkat 15x15</ons-list-item>
+				</ons-list>
+				
+				</ons-page>
+			  </template>
+			  
+			  <!-- Input Berkat -->
+			  <template id="berkat1.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Berkat 1 (Ukuran Dus 20x20)
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/berkat3.jpeg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="berkat-ukuran dus 20x20" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Nasi Putih, megono/gudeg, daging, telor, sambal goreng kentang, acar/mie, kerupuk udang</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 30000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="30000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+			   <template id="berkat2.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Berkat 2 (Ukuran Dus 18x18)
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/berkat4.jpg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="berkat-ukuran dus 18x18" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Nasi Putih, megono/gudeg, daging, sambal goreng kentang, acar/mie, kerupuk udang</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 27000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="27000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+
+			  <template id="berkat3.html">
+				<ons-page>
+					<ons-toolbar>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Berkat 3 (Ukuran Dus 15x15)
+						</div>
+					  </ons-toolbar>
+					  <center><img src="logo/berkat5.jpeg" alt="Onsen UI" style="width: 100%"></center>
+					<ons-list>
+		  
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_pesanan"  style="color: black;" ></ons-input>
+								<input type="hidden" id="nama_pesanan" value="berkat-ukuran dus 15x15" name="" >
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="pelanggan"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="alamat"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="25%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<ons-input id="no_telp"  style="color: black;" ></ons-input>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Isi </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="isi"  style="color: black;" disabled >Nasi Putih, megono/gudeg, telor, sambal goreng kentang, acar/mie, kerupuk udang</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Harga </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="Harga"  style="color: black;" disabled >Rp 24000</ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="date" id="tgl_booking" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<ons-input type="time" id="jam_ambil" ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<ons-button id="minus" onclick="minus()" >-</ons-button>
+									<span id="numberPlace">0</span>
+									<ons-button id="plus" onclick="plus()">+</ons-button>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="25%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<ons-input id="hargaAwal"  style="color: black;" value="24000" type="hidden" ></ons-input>
+									<span>Rp</span><ons-input id="nama"  style="color: black;" readOnly value="0"  ></ons-input>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="fp"  modifier="material modifier1" width="35%"></ons-radio>
+								</label>
+								<label>FP 100%</label>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<label class="left">
+									<ons-radio name="pembayaran" id="dp"  modifier="material modifier2" width="35%"></ons-radio>
+								</label>
+								<label>DP 50%</label>
+								</ons-row>
+							</ons-list-item> 
+							</ons-list>
+							<br>
+							<div style="text-align: center;" id="simpan">
+							<ons-button onclick="input_data()">SIMPAN</ons-button>
+							</div>
+							
+							</ons-page>
+			  </template>
+
+
+			  
+			    <template id="detail.html">
+				<ons-page>
+					<ons-toolbar width>
+						<div class="left">
+						  <ons-toolbar-button onclick="fn.open()">
+							<ons-icon icon="md-menu"></ons-icon>
+						  </ons-toolbar-button>
+						</div>
+						<div class="center">
+						 Detail Pesanan
+						</div>
+					  </ons-toolbar>
+					<ons-list>
+						<ons-list-item>
+							<ons-row>
+								<ons-col width="45%">
+								  <label>Paket</label>
+								</ons-col>
+								<ons-col>
+								  <span id="d_paket"></span>
+								</ons-col>
+							  </ons-row>
+						</ons-list-item>
+						<ons-list-item>
+							
+							<ons-row>
+							  <ons-col width="45%">
+								<label>No. pesanan</label>
+							  </ons-col>
+							  <ons-col>
+								<span id="d_no"></span>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+						<ons-list-item>
+							<ons-row>
+							  <ons-col width="45%">
+								<label>Nama </label>
+							  </ons-col>
+							  <ons-col>
+								<span id="d_pelanggan"></span>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+		
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="45%">
+								<label>Alamat </label>
+							  </ons-col>
+							  <ons-col>
+								<span id="d_alamat"></span>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+						  <ons-list-item>
+							<ons-row>
+							  <ons-col width="45%">
+								<label>No. Telepon </label>
+							  </ons-col>
+							  <ons-col>
+								<span id="d_telepon"></span>
+							  </ons-col>
+							</ons-row>
+						  </ons-list-item>
+
+					
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Tanggal Booking</label>
+								</ons-col>
+								<ons-col>
+									<span id="d_tanggal"></span>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Jam Ambil</label>
+								</ons-col>
+								<ons-col>
+									<span id="d_jam"></span>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Jumlah Order</label>
+								</ons-col>
+								<ons-col>
+									<span id="d_harga"></span>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Total </label>
+								</ons-col>
+								<ons-col>
+									<span id="d_total"></span>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+							<ons-list-item>
+								<ons-row>
+								<ons-col width="45%">
+									<label>Keterangan Pembayaran </label>
+								</ons-col>
+								<ons-col>
+									<span id="d_pembayaran"></span>
+								</ons-col>
+								</ons-row>
+							</ons-list-item>
+
+						
+							</ons-list>
+							<br>
+							
+							
+							</ons-page>
+			  </template>
+
+			  
+		</ons-page>
+	</template>
+
+			  
+		
+	<script src="js/app.js"></script>
+	 	  
+</body>
+</html>
